@@ -3,26 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package prm2.Labo2;
+package Labo02;
 
 import java.util.Scanner;
 /**
  *
  * @author 2207hembilo
  */
-public class Exercice16 {
+public class Exercice17 {
     public static void main(String[] args) {
-        
         Scanner scan = new Scanner(System.in);
-        boolean IsLeap = true;
         
-        System.out.print("Type a year : ");
-        int year = scan.nextInt();
+         System.out.print("Type the first number : ");
+        int firstNumber = scan.nextInt();
+        System.out.print("Type the second number : ");
+        int secondNumber = scan.nextInt();
         
-        if((year % 4 != 0 || year % 400 != 0)  && year % 100 == 0 ){
-            System.out.println("the year is not a Leap year");
+        
+        if(firstNumber < 0 && secondNumber > 0){
+            System.out.println("negatif");
         } else {
-            System.out.println("the year is a Leap year");
+            System.out.println("positif");
         }
     }
 }

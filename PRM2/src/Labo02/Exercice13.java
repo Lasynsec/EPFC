@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PRM2.Labo2;
+package Labo02;
 
 import  java.util.Scanner;
 
