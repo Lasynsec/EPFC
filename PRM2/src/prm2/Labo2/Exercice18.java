@@ -10,20 +10,22 @@ import java.util.Scanner;
  *
  * @author 2207hembilo
  */
-public class Exercice17 {
+public class Exercice18 {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+       Scanner scan = new Scanner(System.in);
         
-         System.out.print("Type the first number : ");
+        System.out.print("Type the first number : ");
         int firstNumber = scan.nextInt();
         System.out.print("Type the second number : ");
         int secondNumber = scan.nextInt();
         
         
-        if(firstNumber < 0 && secondNumber > 0){
+        if(-firstNumber > secondNumber && firstNumber < 0 ){
+            System.out.println("negatif");
+        } else if(firstNumber < 0 && secondNumber < 0){
             System.out.println("negatif");
         } else {
-            System.out.println("positif");
+           System.out.println("positif");
         }
     }
 }

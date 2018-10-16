@@ -10,20 +10,16 @@ import java.util.Scanner;
  *
  * @author 2207hembilo
  */
-public class Exercice17 {
+public class Exercice19 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         
-         System.out.print("Type the first number : ");
-        int firstNumber = scan.nextInt();
-        System.out.print("Type the second number : ");
-        int secondNumber = scan.nextInt();
+        System.out.println("Type the number of days for your lease");
+        int numberOfDays = scan.nextInt();
         
+        System.out.println("Type the distance driven in kilometer");
+        int distanceDriven = scan.nextInt();
         
-        if(firstNumber < 0 && secondNumber > 0){
-            System.out.println("negatif");
-        } else {
-            System.out.println("positif");
-        }
+        //System.out.println("the price of the lease is : " + );
     }
 }
