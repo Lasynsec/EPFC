@@ -1,0 +1,1 @@
+select distinct ID_P from SPJ where ID_P in ("P1","P6","P4") and ID_S = "S5";

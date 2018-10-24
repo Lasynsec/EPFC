@@ -1,0 +1,1 @@
+select distinct PNAME from P where instr(PNAME,'c');
