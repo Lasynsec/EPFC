@@ -19,9 +19,9 @@ public class Exercice06 {
         int userNumber = scan.nextInt();
         
         if(userNumber >= 0 && userNumber <= 10 ){
-            System.out.println("You are in the range");
+            System.out.println(userNumber +" is in the range");
         } else {
-           System.out.println("you are not in the range");
+           System.out.println(userNumber + " is not in the range");
                    
         }
     }
