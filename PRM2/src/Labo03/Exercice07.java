@@ -19,6 +19,9 @@ public class Exercice07 {
         boolean stopIt = false;
          System.out.print("Type the value number " + (k+1) + " : ");
          int userInput = scan.nextInt();
+         
+         if(userInput == -1)
+             System.out.println("the number is not correct");stopIt=true;
         
         while(!stopIt) {
             System.out.print("Type the value number " + (k+1) + " : ");
@@ -31,6 +34,8 @@ public class Exercice07 {
             }
             ++k;
         }
-        System.out.println("The last value is " + lastValue);
+        
+        if(stopIt)
+            System.out.println("The last value is " + lastValue);
     }
 }
