@@ -1,0 +1,1 @@
+select JNAME from S join SPJ on S.ID_S = SPJ.ID_S join J on J.ID_J = SPJ.ID_J where S.ID_S = "S1";

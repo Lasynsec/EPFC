@@ -1,0 +1,1 @@
+select distinct P1.ID_P,P2.ID_P,SPJ.ID_S from SPJ as P1, SPJ as P2, SPJ where (P1.ID_S = SPJ.ID_S and P2.ID_S = SPJ.ID_S) and P1.ID_P < P2.ID_P;

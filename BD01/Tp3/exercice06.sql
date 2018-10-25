@@ -1,0 +1,1 @@
+SELECT S.SNAME as NOM, P.PNAME as PIECE, J.JNAME as PROJET, QTY as QUANTITE from SPJ join S on SPJ.ID_S = S.ID_S join P on SPJ.ID_P = P.ID_P join J on SPJ.ID_J = J.ID_J;

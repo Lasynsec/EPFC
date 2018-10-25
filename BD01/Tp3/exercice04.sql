@@ -1,0 +1,1 @@
+select distinct PNAME from P join SPJ on P.ID_P = SPJ.ID_P where QTY between 150 and 250;

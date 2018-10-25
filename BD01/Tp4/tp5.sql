@@ -1,0 +1,1 @@
+select SNAME from S where substr(SNAME,1,1) in ('A','C');

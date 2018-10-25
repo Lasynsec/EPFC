@@ -1,0 +1,1 @@
+select P.COLOR from P join SPJ on P.ID_P = SPJ.ID_P join S on SPJ.ID_S = S.ID_S where S.ID_S = "s3";

@@ -1,0 +1,1 @@
+select distinct J.CITY from J join SPJ on J.ID_J = SPJ.ID_J where ID_S = "S5";

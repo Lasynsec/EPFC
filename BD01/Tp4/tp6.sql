@@ -1,0 +1,1 @@
+select S.ID_S,P.ID_P,J.ID_J from S,P,J where S.CITY <> P.CITY or P.CITY <> J.CITY order by S.ID_S,P.ID_P,J.ID_J asc;

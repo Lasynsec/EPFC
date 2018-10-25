@@ -1,0 +1,1 @@
+select distinct PNAME from P where WEIGHT < 18 and CITY in ('Rome','London');
