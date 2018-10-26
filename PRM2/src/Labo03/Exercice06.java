@@ -16,13 +16,25 @@ public class Exercice06 {
         
         System.out.print("Type the limit number : ");
         int limitNumber = scan.nextInt();
-        int k = 0;
-        int sumOfInputs = 0;
         
-        while((sumOfInputs*sumOfInputs) < limitNumber){
-            sumOfInputs += k;
-            ++k;
-            System.out.print(k+" ");
+        while(limitNumber <= 0){
+     
+            if(limitNumber <= 0){
+                System.out.println("Please type a number greater than 0 !");
+            }
+            System.out.print("Type the limit number : ");
+            limitNumber = scan.nextInt();
+        }
+        
+        int k = 1;
+        
+        if(limitNumber != 1){
+            while( (k*k) < limitNumber){
+                System.out.print(k+" ");
+                ++k;
+            }
+        } else {
+            System.out.print("1");
         }
          System.out.println("");
     }
