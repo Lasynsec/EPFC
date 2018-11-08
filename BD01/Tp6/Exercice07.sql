@@ -1,0 +1,1 @@
+select ID_P, ID_J, Sum(QTY) as TOTAL from SPJ group by ID_P, ID_J order by ID_P;

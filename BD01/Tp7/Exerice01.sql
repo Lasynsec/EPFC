@@ -1,0 +1,1 @@
+select ID_J, sum(QTY) from SPJ join P on SPJ.ID_P = P.ID_P group by ID_J having sum(QTY) > 1000 and ID_J ="J3" OR ID_J ="J4";

@@ -1,0 +1,1 @@
+select ID_P, ID_J from SPJ group by ID_P, ID_J having  AVG(QTY) > 320;
