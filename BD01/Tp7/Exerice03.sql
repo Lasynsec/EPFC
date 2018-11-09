@@ -1,1 +1,1 @@
-select FournOne.ID_S, FournTwo.ID_S from SPJ as FournOne join SPJ as FournTwo on FournOne.ID_S = FournTwo.ID_S;
+select ID_S from SPJ group by ID_S, ID_P having count(ID_P) >= 3 ;
