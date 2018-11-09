@@ -1,0 +1,1 @@
+select SPJ.ID_J, sum(WEIGHT*QTY) from P join SPJ on P.ID_P = SPJ.ID_P join J on SPJ.ID_J = J.ID_J group by SPJ.ID_J;

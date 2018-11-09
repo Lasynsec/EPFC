@@ -1,0 +1,1 @@
+select ID_S ,count(ID_S) from spj group by ID_S;

@@ -1,0 +1,1 @@
+select FournOne.ID_S, FournTwo.ID_S from SPJ as FournOne join SPJ as FournTwo on FournOne.ID_S = FournTwo.ID_S;
