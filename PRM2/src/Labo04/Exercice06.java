@@ -17,18 +17,20 @@ public class Exercice06 {
         System.out.print("Type thenumber of values : ");
         int userInput = scan.nextInt();
         int numberOfValues = userInput;
+        double positivesValues = 0;
         
         int sumOfValues = 0;
         
-        for(int i = 1; i <= numberOfValues; ++i){
-            System.out.print("Type the number of values : ");
+        for(int i = 0; i < numberOfValues; ++i){
+            System.out.print("Type the value number "+ (i+1) + " : ");
             userInput = scan.nextInt();
             
             if(userInput > 0){
-                sumOfValues += userInput; 
+                sumOfValues += userInput;
+                ++positivesValues;
             }
         }
         
-        System.out.println("the average is " + (double) (sumOfValues / numberOfValues));
+        System.out.println("the average is " + (double) (sumOfValues / positivesValues));
     }
 }
