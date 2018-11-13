@@ -24,7 +24,7 @@ public class Exercice05 {
         int nulls = 0;
         
         for(int i = 1; i <= nbrOfValues; ++i){
-            System.out.print("Type the number of values : ");
+            System.out.print("Type the value number " + i + " : ");
             userInput = scan.nextInt();
             
             if(userInput < 0){

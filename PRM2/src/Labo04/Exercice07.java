@@ -28,7 +28,6 @@ public class Exercice07 {
                 System.out.print("Please type a number greater than 0 : ");
                 userInput = scan.nextInt();
             }
-            
         }
         
         //System.out.println("Max value of Int is : " + Integer.MAX_VALUE);

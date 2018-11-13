@@ -20,7 +20,7 @@ public class Exercice04 {
         int smallestValue = userInput;
         
         for(int i = 1; i <= nbrOfValues; ++i){
-            System.out.print("Type the value number " + i + " : ");
+            System.out.print("Type the value number (" + i + ") : ");
             userInput = scan.nextInt();
             
             if(userInput < smallestValue){
