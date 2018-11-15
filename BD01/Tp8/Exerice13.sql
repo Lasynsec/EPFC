@@ -1,3 +1,3 @@
-select nom from personne join message on personne.SSN = message.Expediteur 
-	group by Expediteur, Sexe
-    having count(Expediteur) = 1 and Sexe = "F"
+select Sexe, count(ID_Message) from Destinataires 
+	join personne 
+    on destinataires.Destinataire = personne.SSN group by Sexe
