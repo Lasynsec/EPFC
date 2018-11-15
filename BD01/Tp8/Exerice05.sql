@@ -1,0 +1,1 @@
+select avg(Age) from personne where Sexe = "F"

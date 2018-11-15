@@ -1,1 +1,1 @@
-select ID_p, count(distinct ID_S) from SPJ group by ID_P having count(distinct ID_S) >= 2
+select ID_p from SPJ group by ID_P having count(distinct ID_S) >= 2

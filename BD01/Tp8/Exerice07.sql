@@ -1,0 +1,1 @@
+select Sexe, count(Sexe) from personne group by Sexe;

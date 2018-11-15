@@ -1,0 +1,1 @@
+select (count(Destinataire)/count(distinct ID_Message)) from destinataires
