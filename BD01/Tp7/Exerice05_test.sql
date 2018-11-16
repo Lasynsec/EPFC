@@ -1,0 +1,1 @@
+select distinct intermedaire.ID_P from (select ID_P from SPJ.ID_J group by ID_J having count(distinct ID_S) >= 2) as intermedaire

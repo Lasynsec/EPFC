@@ -1,0 +1,1 @@
+select ID_P, sum(QTY) from SPJ group by ID_P having count(ID_P) > 3;
