@@ -1,0 +1,1 @@
+select SSN1, count(SSN2) from estami group by SSN1 having SSN1 ="P1" or SSN1="P2";
