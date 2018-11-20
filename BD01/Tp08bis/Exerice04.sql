@@ -1,0 +1,1 @@
+select ID_J, sum(QTY), ID_S,count(ID_S) from SPJ group by ID_J,ID_S having sum(QTY) > 500
