@@ -1,0 +1,1 @@
+select distinct PNAME from P where ID_P in (select ID_P from SPJ where ID_S = "S2")
