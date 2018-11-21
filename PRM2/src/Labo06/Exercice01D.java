@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author herve
  */
-public class Exercice01C {
+public class Exercice01D {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         
@@ -23,22 +23,23 @@ public class Exercice01C {
             for(int y = 1; y < length; ++y){
                 
                 if(i == (y-1)){
-                    //System.out.print("X");
-                    System.out.print(y);
-                }else if (i == -y+(length)){
-                    //System.out.print("X");
-                    System.out.print(y);
-                }else {
                     System.out.print(" ");
+                    //System.out.print(y);
+                }else if (i == -y+(length)){
+                    System.out.print(" ");
+                    //System.out.print(y);
+                }else {
+                    System.out.print("X");
                 }
                 line = y;
             }
             if(i == line || i == 0){
-                //System.out.println("X");
-                System.out.println(i);
-           }else {
                 System.out.println(" ");
+                //System.out.println(i);
+           }else {
+                System.out.println("X");
             }
         }
     }
+    
 }
