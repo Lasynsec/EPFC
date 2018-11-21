@@ -6,25 +6,28 @@
 package Labo06;
 
 import java.util.Scanner;
-
 /**
  *
- * @author herve
+ * @author 2207hembilo
  */
 public class Exercice01G {
-
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.print("Please type the length :");
+        Scanner scan =  new Scanner(System.in);
+        
+        System.out.print("Please type a number : ");
         int length = scan.nextInt();
-        for (int line = 0; line < length; ++line) {
-            for (int column = 1; column < length; ++column) {
-                System.out.print(column);
+        int lengthBis = length;
+        for(int line = 0; line < length; ++line){
+            for(int column = 1; column < length;++column){
+                
+                    if(column+line >= length){
+                        System.out.print("X");   
+                    }else {
+                        System.out.print(" "); 
+                    }
+                    System.out.print(" ");
             }
-            // System.out.println("Length is " + length);
-            System.out.println(line);
+            System.out.println("X");
         }
-
     }
 }
