@@ -1,0 +1,1 @@
+select distinct SNAME from S where ID_S in (select distinct ID_S from SPJ join P on SPJ.ID_P = P.ID_P where P.COLOR = "Red")

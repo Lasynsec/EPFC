@@ -1,0 +1,1 @@
+select S.ID_S, SNAME from S where ID_S in (select distinct ID_S from SPJ join J on SPJ.ID_J = J.ID_J where J.JNAME = "CONSOLE")
