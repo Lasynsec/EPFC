@@ -1,0 +1,1 @@
+select PNAME from p where WEIGHT = ALL (select max(WEIGHT) from p)
