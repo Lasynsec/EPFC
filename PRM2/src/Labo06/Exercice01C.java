@@ -21,7 +21,6 @@ public class Exercice01C {
         int line = 0;
         for(int i = 0; i < length; ++i){
             for(int y = 1; y < length; ++y){
-                
                 if(i == (y-1)){
                     //System.out.print("X");
                     System.out.print(y);
