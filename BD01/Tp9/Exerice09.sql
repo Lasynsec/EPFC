@@ -1,1 +1,1 @@
-select PNAME from p where WEIGHT = ALL (select max(WEIGHT) from p)
+select ID_S from S where ID_S not in (select ID_S from SPJ join P on SPJ.ID_P = P.ID_P where P.COLOR ="Blue")
