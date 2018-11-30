@@ -13,24 +13,27 @@ import java.util.Scanner;
  */
 public class Exercice03 {
     
-public static boolean isHeaven(int nbr)
-{
-    boolean evenOrOdd;
-    if(nbr % 2 == 0){
-        evenOrOdd = true;
-    }else{
-        evenOrOdd = false;
+    public static int getMaximum(int nbrOne,int nbrTwo){
+        
+        int theMax = 0;
+        if(nbrOne > nbrTwo){
+            theMax = nbrOne;
+        } else {
+            theMax = nbrTwo;
+        }
+        return theMax;
     }
-    return evenOrOdd;
-}
-
-public static void main(String[] args){
-    Scanner scan = new Scanner(System.in);
-
-    int userInput = scan.nextInt();
-    /*  
-    if(isHaven(userInput)){
-        System.out.println("Is even");
-    }*/
-}
+    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Type the frist number : ");
+        int userInputOne = scan.nextInt();
+        
+        System.out.print("Type the second number : ");
+        int userInputTwo = scan.nextInt();
+        
+        System.out.println("The greater of both numbers is " + getMaximum(userInputOne, userInputTwo));
+        
+    }    
 }
