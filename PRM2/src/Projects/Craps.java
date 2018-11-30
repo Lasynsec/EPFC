@@ -25,6 +25,8 @@ public class Craps {
         int nbrChips = 10;
         boolean stopTheGame = false;
         boolean reachTheGoal = false;
+        boolean canBet = true;
+        
         int userBet = 0;
         int diceOne = 0;
         int diceTwo = 0;
@@ -32,14 +34,19 @@ public class Craps {
         int roundNumber = 1;
         int theGoal = 0;
         
-        do{             
-            System.out.println("You have " + nbrChips +" chips ");
-            System.out.print("How much chips do you want to bet ? (Type 0 to stop the game) : ");
-            userBet = scan.nextInt();
+        do{
+            if(canBet){
+                System.out.println("You have " + nbrChips +" chips ");
+                System.out.print("How much chips do you want to bet ? (Type 0 to stop the game) : ");
+                userBet = scan.nextInt();
+                theGoal = SumOfDices;
+                System.out.println("The goal is " + theGoal);
+                canBet = false;
+            }
             
             if (userBet < 0) {
-               System.out.println(" Hey ! You are trying to scam the Casino. Re-bet !");
-               System.out.println(" ");
+               System.out.println(" Hey ! You are trying to scam the Casino. Re-bet !\n");
+               canBet = true;
             } else {
                 diceOne = generator.nextInt(11)+1;
                 diceTwo = generator.nextInt(11)+1;
@@ -47,16 +54,24 @@ public class Craps {
 
                 System.out.println("You have thrown " + diceOne + " and " + diceTwo + ". The sum is " + SumOfDices);
 
-                if (userBet == 0) {
+                if (userBet <= 0) {
                     System.out.println("Good bye !");
+                    
+                    
                     stopTheGame = true;
                 } else if (nbrChips <= 0 || SumOfDices == 7 || ((SumOfDices == 2 || SumOfDices == 3 || SumOfDices == 12) && (roundNumber == 1))) {
                     System.out.println("You lose !");
-                    stopTheGame = true;
+                    nbrChips -= userBet;
+                    
+                    if(nbrChips <= 0){
+                        stopTheGame = true;
+                         System.out.println("You have " + nbrChips +" chips ");
+                    }
                 } else {
                     if (roundNumber == 1 && (SumOfDices == 7 || SumOfDices == 11) || theGoal == SumOfDices){
                         System.out.println("You win !");
                         nbrChips *= 2;
+                        canBet = true;
                     } else {
                          nbrChips -= userBet;
                          if (nbrChips <= 0) {
@@ -64,12 +79,9 @@ public class Craps {
                              stopTheGame = true;
                          }
                     }
-                    
-                    theGoal = SumOfDices;
-                    System.out.println("The goal is " + theGoal);
                     ++roundNumber;
                 }
-                System.out.println(" ");
+                //System.out.println(" ");
             }
         }while(!stopTheGame );
         
