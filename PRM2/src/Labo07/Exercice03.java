@@ -24,13 +24,13 @@ public static boolean isHeaven(int nbr)
     return evenOrOdd;
 }
 
-    public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-        
-        int userInput = scan.nextInt();
-        /*  
-        if(isHaven(userInput)){
-            System.out.println("Is even");
-        }*/
-    }
+public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+
+    int userInput = scan.nextInt();
+    /*  
+    if(isHaven(userInput)){
+        System.out.println("Is even");
+    }*/
+}
 }
