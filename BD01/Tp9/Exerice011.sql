@@ -1,0 +1,1 @@
+/*select ID_S from SPJ group by ID_S having ID_S in */(select ID_S, max(QTY) from SPJ group by ID_S)
