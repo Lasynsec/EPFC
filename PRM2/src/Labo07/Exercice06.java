@@ -45,7 +45,7 @@ public class Exercice06 {
         int square;
          for(int count = 1; count < exponent; ++count){
             square = multiplication(coef, coef);
-            result +=
+            result += 1;
         }
     }
     
