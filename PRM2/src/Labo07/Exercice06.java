@@ -42,15 +42,22 @@ public class Exercice06 {
     
     public static int power(int coef, int exponent){
         int result = 1;
-        int square;
-         for(int count = 1; count < exponent; ++count){
-            square = multiplication(coef, coef);
-            result += 1;
+         for(int count = 1; count <= exponent; ++count){
+            result = multiplication(result, coef);
         }
+         return result;
     }
     
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
         
+        System.out.print("Type the coeficient : ");
+        int coef = scan.nextInt();
+        
+        System.out.print("Type the exponent : ");
+        int exp = scan.nextInt();
+        
+        System.out.println("The result is : " + power(coef, exp));
     }
     
 }
