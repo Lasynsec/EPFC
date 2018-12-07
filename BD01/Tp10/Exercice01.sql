@@ -1,0 +1,1 @@
+select ID_J from spj where exists (select ID_S from spj group by ID_S having sum(QTY) > 1000)
