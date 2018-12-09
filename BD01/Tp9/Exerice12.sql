@@ -1,0 +1,1 @@
+(select ID_S from SPJ group by ID_S,ID_J,ID_P having count(ID_J) >= 4 and count(ID_P) >= 3

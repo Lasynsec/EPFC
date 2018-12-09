@@ -33,6 +33,6 @@ public class Exercice10 {
             }
         }
         
-        System.out.println("There are " + countPrime + "prime number");
+        System.out.println("Until the number " + userNbr + " There is " + countPrime + " prime number");
     }
 }

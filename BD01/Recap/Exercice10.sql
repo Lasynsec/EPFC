@@ -1,0 +1,1 @@
+select Hamburger.Nom from Hamburger where Hamburger.Genre = "Boeuf" and Hamburger.ID in (select Mange.ID_H from Personne join Mange on Personne.ID = Mange.ID_P where Personne.Poids > 80) 

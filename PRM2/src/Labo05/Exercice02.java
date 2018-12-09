@@ -8,28 +8,34 @@ package Labo05;
 import java.util.Scanner;
 /**
  *
- * @author 2207hembilo
+ * @author herve
  */
 public class Exercice02 {
     public static void main(String[] args) {
-        Scanner scan =  new Scanner(System.in);
-  
-        int userInput = 0;
-        int sentinel = -1;
-        int sumOfInput = 0;
-        int i = 0;
+        Scanner scan = new Scanner(System.in);
+        
+        int numberOfValue;
+        do{
+            System.out.print("Please type the number of values : ");
+            numberOfValue = scan.nextInt();
+            
+            if(numberOfValue < 0){
+                System.out.println("Your number must be greater than 0");
+            }
+        }while(numberOfValue < 0);
+        
+        int userValue;
+        int count = 1;
+        double additionOfvalues = 0;
         
         do{
+            System.out.print("Type the value number (" + count + ") : " );
+            userValue = scan.nextInt();
             
-            System.out.print("Type the value number " + (i+1) + " : ");
-            userInput = scan.nextInt();
-            
-            if(userInput != sentinel){
-                sumOfInput += userInput;
-                ++i;
-            }
-        }while(userInput != sentinel);
+            additionOfvalues += userValue;
+            ++count;
+        }while(count <= numberOfValue);
         
-        System.out.println("The average is ("+sumOfInput+"/"+i+") = " + (double) (sumOfInput/i));
+        System.out.println(additionOfvalues/numberOfValue);
     }
 }

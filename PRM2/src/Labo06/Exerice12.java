@@ -24,12 +24,15 @@ public class Exerice12 {
             System.out.print("Type the value number (" + count + ") : ");
             userInput = scan.nextInt();
             
-            if(userInput < previousInput){
-                areIncreasing = false;
-            } else {
-                previousInput = userInput;
+            if (userInput != -1) {
+                if (userInput < previousInput) {
+                    areIncreasing = false;
+                } else {
+                    previousInput = userInput;
+                }
+                ++count;
             }
-            ++count;
+         
         }while(userInput != -1 && areIncreasing);
         
         if(areIncreasing){

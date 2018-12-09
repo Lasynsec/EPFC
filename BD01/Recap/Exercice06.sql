@@ -1,0 +1,1 @@
+select date_format(Date_Consommation, '%d/%m') from Mange group by ID_H,Date_Consommation having count(ID_H) >= 2
