@@ -22,11 +22,12 @@ public class Exercice08 {
         if(!it.hasNext()){
             throw new IllegalArgumentException("La sequence est vide");
         }
-        
-        while (it.hasNext()) {
+        boolean getOut = false;
+        while (it.hasNext() && getOut == false) {
             ++count;
             if(it.next() == n){
                  positionTarget = count;
+                 getOut = true;
             }
         }
     return positionTarget;         
@@ -38,7 +39,7 @@ public class Exercice08 {
         System.out.print("Tye a number : ");
         int userInput = scan.nextInt();
         
-        SeqInt s = new SeqInt(1,2,3,4,5,4,6);
+        SeqInt s = new SeqInt(1,2,3,4,2,4,6);
         
         System.out.println(firstValuePosition(s, userInput));
     }
