@@ -26,9 +26,8 @@ public class Calendar {
      * @return
      */
     public static int dayOfWeek(int day, int month, int year) {
-        double equationMonth = Math.round((double)((month+1)*13)/5);
-        int eqMonth = (int) equationMonth;
-        int dayOfWeekNumber = (day+eqMonth+ (year % 100) + ((year % 100)/4) + ((year/100)/4) + 5*(year/100)) % 7;
+        double equationMonth = ((month+1)*13)/5;
+        int dayOfWeekNumber = (day+(((month+1)*13)/5)+ (year % 100) + ((year % 100)/4) + ((year/100)/4) + 5*(year/100)) % 7;
             
         return dayOfWeekNumber;
     }
@@ -99,6 +98,42 @@ public class Calendar {
         
         return result;
     }
+    
+    public static int askForDayAndMonth(String yearOrMonth){
+        int userInput;
+        boolean isInputCorrect;
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Please type an integer for the " + yearOrMonth + " : ");
+        do{
+            userInput = scan.nextInt();
+            if(yearOrMonth == "month" && (userInput <= 0 || userInput > 14)){
+                System.out.print("Please type a number greater than 0 and lower than 15 for the month : ");
+                isInputCorrect = false;
+            }else if(yearOrMonth == "year" && userInput < 1){
+                System.out.print("Please type a number greater than 0 for the day : ");
+                isInputCorrect = false;
+            }else{
+                isInputCorrect = true;
+            }    
+        }while(!isInputCorrect);
+        
+        
+        return userInput;
+    }
+    
+    /**
+     * 
+     * @param month
+     * @return boolean;
+     */
+    public static boolean isJanuaryOrFebruary(int month){
+        boolean isJanOrFeb = false;
+        if(month == 1 || month == 2){
+            isJanOrFeb = true;
+        }
+        return isJanOrFeb;
+    }
 
     /**
      * Display the calendar of the given month in parameter. Weeks start on
@@ -149,8 +184,12 @@ public class Calendar {
         System.out.println("================================");
         System.out.println("Mon  Tues Wed Thurs Fri  Sat Sun");
         
+        if(isJanuaryOrFebruary(month)){
+            month += 12;
+            --year; 
+        }
+        
         int startingDay = dayOfWeek(1,month,year);
-        System.out.println(startingDay);
         int count = 0;
         int nbrOfWeekLine = 6;
         
@@ -173,7 +212,9 @@ public class Calendar {
     }
 
     public static void main(String[] args) {
-        printCalendar(7,2018);
+        int year = askForDayAndMonth("year");
+        int month = askForDayAndMonth("month");
+        printCalendar(month,year);
+        
     }
-
 }
