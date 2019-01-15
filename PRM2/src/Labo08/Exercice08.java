@@ -36,7 +36,7 @@ public class Exercice08 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         
-        System.out.print("Tye a number : ");
+        System.out.print("Type a number : ");
         int userInput = scan.nextInt();
         
         SeqInt s = new SeqInt(1,2,3,4,2,4,6);
