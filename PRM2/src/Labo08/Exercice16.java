@@ -13,29 +13,38 @@ import seqint.SeqIntIterator;
  * @author herve
  */
 public class Exercice16 {
-    public static int getDifferenceOfMaxValues(SeqInt s){
+    public static SeqInt getTheMaxValues(SeqInt s){
         SeqIntIterator it = s.iterator();
         
         int maxValueOne = it.next();
         int maxValueTwo = 0;
-        int currentValue;
+        
+        if(!it.hasNext()){
+             throw new IllegalArgumentException("The list is empty");
+        }
         while(it.hasNext()){
-            currentValue = it.next();
+            int currentValue = it.next();
             if(currentValue > maxValueOne){
-                maxValueTwo = maxValueOne;               
-                maxValueOne = currentValue;
+                    maxValueTwo = maxValueOne;               
+                    maxValueOne = currentValue;   
+                    System.out.println("Test1");
             }else if (currentValue > maxValueTwo && maxValueTwo < maxValueOne){
                 maxValueTwo = currentValue;
+                System.out.println("Test2");
             }
         }
+        //--------------------------Test
+        System.out.println(maxValueOne);
+        System.out.println(maxValueTwo);
         
-        //SeqInt MaxAndMin = new SeqInt(maxValueOne,maxValueTwo);
+        SeqInt theTwoMax = new SeqInt(maxValueOne,maxValueTwo);
         
-        return maxValueOne - maxValueTwo;
+        return theTwoMax;
     }
+    
     public static void main(String[] args) {
-        SeqInt s = new SeqInt(10,5,30,80,50,1000);
-        
-        System.out.println(getDifferenceOfMaxValues(s));
+        //SeqInt s = new SeqInt(10,5,30,80,50,1000);
+        SeqInt s = new SeqInt(3,6,4,6,2,-8);        
+        System.out.println(getTheMaxValues(s));
     }
 }

@@ -20,19 +20,15 @@ public class Exercice12 {
        int currentValue;
        int position = 0;
        int count = 1;
-       int oneTimeMax = 0;
-     
+       
        int theMax = it.next();
-       boolean getOut = false;
-       while(it.hasNext() && getOut == false){
+       while(it.hasNext()){
            ++count;
            currentValue = it.next();           
-           if(currentValue >= theMax){
-               if(currentValue != theMax){
+           if(currentValue > theMax){
                    theMax = currentValue;
                    position = count;
                }
-           }
        }
        return position;
     }

@@ -37,7 +37,7 @@ public class Exercice10 {
     }
     public static void main(String[] args) {
         
-        SeqInt s = new SeqInt(1,2,3,4,3,6);
+        SeqInt s = new SeqInt(1,2,3,4,5,6);
         
         System.out.println(hasDublicatedValue(s));
         

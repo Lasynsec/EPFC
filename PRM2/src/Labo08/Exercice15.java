@@ -16,25 +16,27 @@ public class Exercice15 {
     public static SeqInt getTheMaxAndMin(SeqInt s){
         SeqIntIterator it = s.iterator();
         
+        if(!it.hasNext()){
+             throw new IllegalArgumentException("The list is empty");
+        }
+        
         int theMaximum = it.next();
         int theMinimum = theMaximum;
-        int currentValue;
         while (it.hasNext()) {
-            currentValue = it.next();
-            
+            int currentValue = it.next();
             if(currentValue < theMinimum){
                 theMinimum = currentValue;
             }else if(currentValue > theMaximum){
                 theMaximum = currentValue;
             }
         }
+        
         SeqInt MaxAndMin = new SeqInt(theMinimum,theMaximum);
         
         return MaxAndMin;
     }
     public static void main(String[] args) {
-        SeqInt s = new SeqInt(10,5,300,40,5000,6000);
-        
+        SeqInt s = new SeqInt(1,5,300,40,5000,60000);
         System.out.println(getTheMaxAndMin(s));
     }
 }

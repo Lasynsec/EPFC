@@ -39,8 +39,7 @@ public class Exercice09 {
     }
     
     public static void main(String[] args) {
-        SeqInt s = new SeqInt(2,2,3,1,5);
-        
+        SeqInt s = new SeqInt(1,2,3,4,5,6);
         System.out.println(areAscendingNumbers(s));
     }
     

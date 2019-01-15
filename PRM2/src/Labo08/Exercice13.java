@@ -18,19 +18,22 @@ public class Exercice13 {
        
        int currentValue;
        int nbrApparition = 0;
-     
+       
        int theMax = it.next();
+       
        while(it.hasNext()){
            currentValue = it.next();           
-           if(currentValue >= theMax){
+           if(currentValue > theMax){
                theMax = currentValue;
+               nbrApparition = 1;
+           }else if(currentValue == theMax){
                ++nbrApparition;
            }
        }
        return nbrApparition;
     }
     public static void main(String[] args) {
-        SeqInt s = new SeqInt(1,12,3,6,9,12,12);
+        SeqInt s = new SeqInt(30,13,30,6,9,30,13,30);
         
         System.out.println(nbrApparitionMaxValue(s));
     }
