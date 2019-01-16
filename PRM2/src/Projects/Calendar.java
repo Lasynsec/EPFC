@@ -195,7 +195,7 @@ public class Calendar {
         if(startingDay == 1 || startingDay == 0){
             nbrOfWeekLine = 5;
         }
-        for (int i = 0; i < daysInMonth(month, year)/nbrOfWeekLine; ++i) {
+        for (int i = 0; i < daysInMonth(month, year)/7; ++i) {
             for (int j = 0; j < 7; ++j) {
                 if (j < convertFromZellerDay(startingDay) && i == 0) {
                     System.out.print("     ");
