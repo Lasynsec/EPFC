@@ -6,8 +6,7 @@
 package Projects;
 
 import java.util.Scanner;
-import seqint.SeqInt;
-import seqint.SeqIntIterator;
+
 
 /**
  *
@@ -31,32 +30,7 @@ public class Calendar {
             
         return dayOfWeekNumber;
     }
-
-    /**
-     * Return the number of days in the given month in parameter.
-     *
-     * @param month
-     * @param year
-     * @return
-     */
-    public static int daysInMonth(int month, int year) {
-        int numberOfDaysInAMonth = 0;
-        if (month == 1 || month == 3 || month == 5 || month == 3 || month == 7 || month == 8 || month == 10 || month == 12) {
-            numberOfDaysInAMonth = 31;
-        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-            numberOfDaysInAMonth = 30;
-        } else {
-            if (isLeapYear(year)) {
-                numberOfDaysInAMonth = 29;
-            } else {
-                numberOfDaysInAMonth = 28;
-            }
-        }
-
-        return numberOfDaysInAMonth;
-    }
-
-    /**
+     /**
      * Receive a year un the AAAA format and return true if the year is leap
      * otherwise false.
      *
@@ -70,6 +44,30 @@ public class Calendar {
         }
 
         return isLeap;
+    }
+
+    /**
+     * Return the number of days in the given month in parameter.
+     *
+     * @param month
+     * @param year
+     * @return
+     */
+    public static int daysInMonth(int month, int year) {
+        int numberOfDaysInAMonth = 0;
+        if (month == 13 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+            numberOfDaysInAMonth = 31;
+        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            numberOfDaysInAMonth = 30;
+        } else {
+            if (isLeapYear(year)) {
+                numberOfDaysInAMonth = 29;
+            } else {
+                numberOfDaysInAMonth = 28;
+            }
+        }
+
+        return numberOfDaysInAMonth;
     }
 
     /**
@@ -193,16 +191,20 @@ public class Calendar {
         int count = 0;
         int nbrOfWeekLine = 6;
         
-        if(startingDay == 1 || startingDay == 0){
+        if(startingDay == 1 || startingDay == 0 || daysInMonth(month, year) == 28){
             nbrOfWeekLine = 5;
         }
-        for (int i = 0; i < daysInMonth(month, year)/nbrOfWeekLine; ++i) {
+        System.out.println(daysInMonth(month, year)+"/"+nbrOfWeekLine);
+        int numberOfDaysInMonth = daysInMonth(month, year);
+        for (int i = 0; i < numberOfDaysInMonth/nbrOfWeekLine; ++i) {
             for (int j = 0; j < 7; ++j) {
                 if (j < convertFromZellerDay(startingDay) && i == 0) {
                     System.out.print("     ");
                 } else {
-                    printDay(++count);
-                    //System.out.print("("+j+")");
+                    if(count < numberOfDaysInMonth){
+                        printDay(++count);
+                    }
+                    
                 }
             }
             System.out.println("");
