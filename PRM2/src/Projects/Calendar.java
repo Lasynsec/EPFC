@@ -194,7 +194,7 @@ public class Calendar {
         if(startingDay == 1 || startingDay == 0 || daysInMonth(month, year) == 28){
             nbrOfWeekLine = 5;
         }
-        //System.out.println(daysInMonth(month, year)+"/"+nbrOfWeekLine);
+        System.out.println(daysInMonth(month, year)+"/"+nbrOfWeekLine);
         int numberOfDaysInMonth = daysInMonth(month, year);
         for (int i = 0; i < numberOfDaysInMonth/nbrOfWeekLine; ++i) {
             for (int j = 0; j < 7; ++j) {
