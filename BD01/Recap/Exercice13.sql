@@ -1,1 +1,1 @@
-select Mange.ID_H from Mange join Personne on Mange.ID_P = Personne.ID where Personne.Sexe = "M"
+select distinct Mange.ID_H from Mange join Personne on Mange.ID_P = Personne.ID where Personne.Sexe ='M' and ID_H in (select ID_H from Mange join Personne on Mange.ID_P = Personne.ID where Personne.Sexe = 'F')
