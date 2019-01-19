@@ -13,29 +13,30 @@ import seqint.SeqIntIterator;
  * @author herve
  */
 public class Exercice16 {
-    public static int getDifferenceOfMaxValues(SeqInt s){
+    public static SeqInt getTwoMaxValues(SeqInt s){
         SeqIntIterator it = s.iterator();
         
         int maxValueOne = it.next();
         int maxValueTwo = 0;
-        int currentValue;
+        
         while(it.hasNext()){
-            currentValue = it.next();
+            int currentValue = it.next();
             if(currentValue > maxValueOne){
                 maxValueTwo = maxValueOne;               
                 maxValueOne = currentValue;
-            }else if (currentValue > maxValueTwo && maxValueTwo < maxValueOne){
+            }else if (currentValue > maxValueTwo && maxValueTwo < maxValueOne && currentValue != maxValueOne){
                 maxValueTwo = currentValue;
+                System.out.println(maxValueTwo);
             }
         }
         
-        //SeqInt MaxAndMin = new SeqInt(maxValueOne,maxValueTwo);
+        SeqInt getMaxValues = new SeqInt(maxValueOne,maxValueTwo);
         
-        return maxValueOne - maxValueTwo;
+        return getMaxValues;
     }
     public static void main(String[] args) {
-        SeqInt s = new SeqInt(10,5,30,80,50,1000);
+        SeqInt s = new SeqInt(500,500,500,2,50);
         
-        System.out.println(getDifferenceOfMaxValues(s));
+        System.out.println(getTwoMaxValues(s));
     }
 }
