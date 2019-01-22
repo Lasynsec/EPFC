@@ -14,7 +14,6 @@ import seqint.SeqIntIterator;
  */
 public class Exercice05 {
     
-    public static int 
     public static void main(String[] args) {
         
     }
