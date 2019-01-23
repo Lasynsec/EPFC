@@ -1,0 +1,3 @@
+Authentification : SQL Server Authentification
+Login : sa
+MDP : sql4epfc
