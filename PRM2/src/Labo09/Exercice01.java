@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Labo08Bis;
+package Labo09;
 import static Labo08.Exercice02.getLength;
 import seqint.SeqInt;
 import seqint.SeqIntIterator;
