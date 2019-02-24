@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Labo08Bis;
+package Labo09;
 import static Labo08.Exercice02.getLength;
 import seqint.SeqInt;
 import seqint.SeqIntIterator;
@@ -14,10 +14,11 @@ import seqint.SeqIntIterator;
  */
 public class Exercice01 {
     public static int nbrOfPlate( SeqInt s){
-        int nbPlate = 1;
+        int nbPlate = 0;
         SeqIntIterator it = s.iterator();
         if(it.hasNext()){
             int currentValue = it.next();
+            ++nbPlate;
             while (it.hasNext()) {                
                 int prec = currentValue;
                 currentValue = it.next();             
