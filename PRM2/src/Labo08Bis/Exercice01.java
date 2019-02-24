@@ -14,11 +14,10 @@ import seqint.SeqIntIterator;
  */
 public class Exercice01 {
     public static int nbrOfPlate( SeqInt s){
-        int nbPlate = 0;
+        int nbPlate = 1;
         SeqIntIterator it = s.iterator();
         if(it.hasNext()){
             int currentValue = it.next();
-            ++nbPlate;
             while (it.hasNext()) {                
                 int prec = currentValue;
                 currentValue = it.next();             

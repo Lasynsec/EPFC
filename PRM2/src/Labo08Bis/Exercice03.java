@@ -14,33 +14,42 @@ import seqint.SeqIntIterator;
  */
 public class Exercice03 {
     public static int nbrOfPlateAfterLastMaxValue(SeqInt s){
-        int nbrOfPlateLastMValue = 0;
+        int nbrOfPlateLastMaxValue = 0;
         SeqIntIterator it = s.iterator();
-        int positionMax = 0;
         
         if(it.hasNext()){
             int currentValue = it.next();
             int maxValue = currentValue;
-            int nbrOfPlate = 0;
-            int position = 1;
             while(it.hasNext()){
                 int precValue = currentValue;
-                currentValue = it.next();
-                
-                if (currentValue != precValue) {
-                    if (currentValue >= maxValue) {
+                currentValue = it.next();               
+                    if(currentValue >= maxValue) {
                         maxValue = currentValue;
+                        nbrOfPlateLastMaxValue = 0;
+                    }else if(currentValue != precValue){
+                        ++nbrOfPlateLastMaxValue;
                     }
-                }
-                
-
-                ++position;
             }
         }
-        return positionMax;
+        return nbrOfPlateLastMaxValue;
     }
     public static void main(String[] args) {
-        SeqInt s = new SeqInt(500,2,1,1,1,11,5,750,750,750,7,8,2,9);
+        SeqInt s = new SeqInt(500,21,1,850,11,5,750,750,5);
         System.out.println(nbrOfPlateAfterLastMaxValue(s));
     }
 }
+
+/**
+ N°                    |1  |2  |3 |4|5 |6 |7  |8  |9  |
+--------------------------------------------------
+Seq                    |500|21 |1 |1|11|5 |750|750|5  |
+--------------------------------------------------
+CurValue               |500|21 |1 |1|11|5 |750|750|5  | -> currentValue = it.next();
+--------------------------------------------------
+precValue              |   |500|21|1|1 |11|5  |750|750| -> precValue = currentValue;
+--------------------------------------------------
+maxValue               |500| ""|""|"|""|""|750|"" |"" | -> if(currentValue > currentMaxValue) currentMaxValue = currentValue;countNbOfPlate = 0;
+--------------------------------------------------
+nbrOfPlateLastMaxValue |   |1  |2 |2|3 |4 |1  |1  |2  | -> if(currentValue != precValue) ++nbrOfPlateLastMaxValue;
+
+ */

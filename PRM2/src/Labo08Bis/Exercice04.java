@@ -16,25 +16,28 @@ public class Exercice04 {
 
     public static int nbrPlateGreaterOrEqualToThree(SeqInt s) {
         SeqIntIterator it = s.iterator();
-        int nbrPlate = 0;
-        int nbrPlateOfTree = 0;
-        int nbrOfElementInPlate = 0;
+        int nbrPlateOfTreeOrMore = 0;
+        int sizeOfCurrentPlate = 1;
         if (it.hasNext()) {
             int currentValue = it.next();
             while (it.hasNext()) {
                 int precValue = currentValue;
                 currentValue = it.next();
-
-                if (currentValue == precValue) {
-                    ++nbrOfElementInPlate;
-                    System.out.println(nbrOfElementInPlate + ":" + currentValue);
-                   
+                
+                if(precValue == currentValue){
+                    ++sizeOfCurrentPlate;
                 }else {
-                    nbrOfElementInPlate = 1;
+                    sizeOfCurrentPlate = 1;
                 }
+                
+                if(sizeOfCurrentPlate == 3){
+                    ++nbrPlateOfTreeOrMore;
+                }/*else if(sizeOfCurrentPlate == 4){
+                    --nbrPlateOfTreeOrMore;
+                }*/            
             }
         }
-        return nbrPlateOfTree;
+        return nbrPlateOfTreeOrMore;
     }
 
     public static void main(String[] args) {
@@ -42,3 +45,17 @@ public class Exercice04 {
         System.out.println(nbrPlateGreaterOrEqualToThree(s));
     }
 }
+
+/**
+ N°                    |1  |2  |3 |4|5 |6 |7  |8  |9  |
+--------------------------------------------------
+Seq                    |1  |1  |1 |2 |3|4|3|3|3|1|1|1|2|2|2|4|5|5|5
+--------------------------------------------------
+CurValue               |500|21 |1 |1|11|5 |750|750|750  | -> currentValue = it.next();
+--------------------------------------------------
+precValue              |   |500|21|1|1 |11|5  |750|750| -> precValue = currentValue;
+--------------------------------------------------
+nbrOfSameValue         |   |1  |1 |2|1 |1 |1  |2  |3  | -> if(currentValue == precValue) ++nbrOfSameValue; else nbrOfSameValue = 1;
+* --------------------------------------------------
+nbrPlateOfTreeOrMore   |   |0  |0 |0|0 |0 |0  |0  |1  | -> if(nbrOfSameValue >= 3) ++nbrPlateOfTreeOrMore;
+ */

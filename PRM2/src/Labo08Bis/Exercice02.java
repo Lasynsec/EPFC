@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Labo08Bis;
-import static Labo08Bis.Exercice01.nbrOfPlate;
 import seqint.SeqInt;
 import seqint.SeqIntIterator;
 
@@ -19,6 +18,7 @@ public class Exercice02 {
         int nbPlate = 0;
         int maxValue = 0;
         if (it.hasNext()) {
+            nbrPlateBeforeMax = 1;
             int currentValue = it.next();
             maxValue = currentValue;
             while (it.hasNext()) {
