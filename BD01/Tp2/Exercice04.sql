@@ -1,0 +1,1 @@
+select sname from S where STATUS < 25 and city = 'Paris'

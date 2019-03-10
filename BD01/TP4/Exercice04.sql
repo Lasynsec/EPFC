@@ -1,0 +1,1 @@
+select JNAME from J where instr(JNAME,'i') <> 0

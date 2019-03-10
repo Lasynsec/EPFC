@@ -1,0 +1,1 @@
+select sname from S, P,SPJ where S.ID_S = SPJ.ID_S and P.ID_P = SPJ.ID_P and P.ID_P = 'p4'

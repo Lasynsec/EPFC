@@ -1,0 +1,1 @@
+select JNAME from J, SPJ where J.ID_J = SPJ.ID_J and SPJ.ID_S = 'S1'
