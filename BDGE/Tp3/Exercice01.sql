@@ -1,5 +1,7 @@
-select traducteur_ecrivain.NOM 
-	from traducteur_ecrivain 
-		join traduit_par on traducteur_ecrivain.IDTRAD_ECRIV = traduit_par.numTrad
-		join livre_paru on traduit_par.numLivre = livre_paru.IDLIVRE
-		where traducteur_ecrivain.NAT = 'Fr' and livre_paru.LANGUE = 'Fr' and livre_paru.TITRE = 'Don Quichotte'; 
+/*Enable inserts*/
+SET IDENTITY_INSERT dbo.livre_paru ON
+
+alter table dbo.livre_paru add constraint gutenberg check(YEAR(date_parution) > 1434)
+
+/*Test*/
+insert into dbo.livre_paru (IDLIVRE,ISBN,TITRE,EDITEUR,LANGUE,PAYS,DATE_PARUTION,NB_PAGES,NUMOEUVRE) values (12,NULL,'Neuromencer','Flammarion','En','Angleterre','1434-11-21',145,3)
