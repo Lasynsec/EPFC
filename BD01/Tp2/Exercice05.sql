@@ -1,0 +1,1 @@
+select sname from S where STATUS not between 15 and 25

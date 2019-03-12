@@ -59,7 +59,11 @@ public class Calendar {
             numberOfDaysInAMonth = 31;
         } else if (month == 4 || month == 6 || month == 9 || month == 11) {
             numberOfDaysInAMonth = 30;
-        } else {
+        } else {            
+            if(month == 14){
+                ++year;
+            }
+            
             if (isLeapYear(year)) {
                 numberOfDaysInAMonth = 29;
             } else {

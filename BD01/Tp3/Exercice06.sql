@@ -1,0 +1,4 @@
+select SNAME NOM, PNAME PIECE, JNAME PROJET, QTY QUANTITE from SPJ,S,P,J 
+	where SPJ.ID_P = P.ID_P 
+	and SPJ.ID_S = S.ID_S
+    and SPJ.ID_J = J.ID_J

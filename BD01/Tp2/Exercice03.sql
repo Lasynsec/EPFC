@@ -1,0 +1,1 @@
+select sname from S where city ='London' or city='Paris'

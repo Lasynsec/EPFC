@@ -1,0 +1,1 @@
+select P.COLOR from P, SPJ where P.ID_P = SPJ.ID_P and SPJ.ID_S = 'S3'

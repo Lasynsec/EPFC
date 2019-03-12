@@ -18,18 +18,19 @@ public class Exercice01L {
 
         System.out.print("Please type a length for your figurei : ");
         int length = scan.nextInt();
-
+        int column = 1;
         for (int line = 0; line < length; ++line) {
-            for (int column = 1; column < (2 * (length)); ++column) {
-                /*if(column > line && (column +line <= length)){
+            while(column < length) {
+                if(column > 0){
                     System.out.print(column);
-                }else{
+                } else {
                     System.out.print(" ");
-                }*/
-                System.out.print(column);
+                }                
+                    ++column;              
             }
 
             System.out.println(line);
+            column = -line;
         }
     }
 }

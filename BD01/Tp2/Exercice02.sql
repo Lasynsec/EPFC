@@ -1,0 +1,1 @@
+select sname Nom, city Ville from S

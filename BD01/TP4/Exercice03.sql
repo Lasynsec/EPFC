@@ -1,0 +1,1 @@
+select PNAME from P where WEIGHT < 18 and (CITY = 'London' or CITY = 'Romes')
