@@ -1,1 +1,0 @@
-select distinct PNAME from P, SPJ where P.ID_P = SPJ.ID_P and SPJ.QTY between 150 and 250
