@@ -4,25 +4,19 @@
  * and open the template in the editor.
  */
 package Labo10;
-import static Labo10.Exercice01.getArraySum;
+
 import eu.epfc.prm2.Array;
 
 /**
  *
- * @author 2207hembilo
+ * @author herve
  */
 public class Exercice02 {
-   public static double getAverageInArray(Array<Integer> tab){
-       
-       int sumElement = 0;
-       for(int i = 0; i < tab.size();++i){
-           sumElement += tab.get(i);
-       }
-       System.out.println("Tab size"+tab.size());
-       return sumElement / tab.size();
-   } 
+    public static double getAverageOfArrayValues(Array<Integer> tab){
+        return (double) Labo10.Exercice01.getArraySum(tab)/tab.size();
+    }
     public static void main(String[] args) {
-        Array<Integer> tab = new Array<>(10,10,10,10,10,10); 
-        System.out.println(getAverageInArray(tab));
+        Array<Integer> tab =  new Array<>(5,6,7,8,2);
+        System.out.println(getAverageOfArrayValues(tab));
     }
 }
